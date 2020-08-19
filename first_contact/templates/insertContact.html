@@ -1,0 +1,13 @@
+<h1>CONTACT INSERT PAGE</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table border=2>
+        {{abc.as_table}}
+
+        <tr>
+            <td><input type="submit" value="SAVE"></td>
+            <td><input type="reset" value="RESET"></td>
+        </tr>
+    </table>
+</form>

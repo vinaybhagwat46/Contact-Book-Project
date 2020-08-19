@@ -1,0 +1,52 @@
+<h1>ALL CONTACT PAGE</h1>
+
+<form method="POST">
+    {% csrf_token %}
+<table>
+    <tr>
+        <th>FILTER</th>
+    </tr>
+    <tr>
+        <td>
+            <label for='cate'>Choose a Contact Group:</label>
+
+            <select name="category" id="cate">
+            {% for cat in category_list %}
+            <option value="{{cat}}">{{cat}}</option>
+            {% endfor %}
+            </select>
+        </td> 
+        <td>
+            <input type="submit" value="Apply Filter">
+        </td>
+    </tr>
+</table>
+</form>
+
+<table border=2 >
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Mobile Number</th>
+            <th>Email Address</th>
+            <th>Address</th>
+            <th>Circle</th>
+            <th>User</th>
+            <th colspan="2">ACTIONS</th>
+        </tr>
+        {% for i in contact_list %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.contact}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.showCategoryName}}</td>
+            <td>{{i.showUserName}}</td>
+            <td><a href="delete/{{i.id}}">DELETE</a></td>
+            <td><a href="update/{{i.id}}">EDIT</a></td>
+        </tr>
+        {% endfor %}
+</table>

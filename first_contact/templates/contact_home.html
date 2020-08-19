@@ -1,0 +1,16 @@
+<h1>CONTACT HOME PAGE</h1>
+<h2><a href="/">HOME PAGE</a></h2>
+
+{% if user.is_authenticated %}
+
+<h2><a href="userList">USER LIST</a></h2>
+<h2><a href="insertContact">INSERT CONTACT</a></h2>
+<h2><a href="ViewContact">ALL CONTACT LIST</a></h2>
+<h2><a href="contactByUser">Filter Contact By User</a></h2>
+<h2><a href="signout">SIGNOUT</a></h2>
+
+{%else%}
+<h2><a href="signIn">SIGNIN</a></h2>
+<h2><a href="addUser">ADD USER</a></h2>
+
+{% endif %}

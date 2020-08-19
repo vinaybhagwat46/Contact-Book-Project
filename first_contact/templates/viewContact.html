@@ -1,0 +1,29 @@
+<h1>ALL CONTACT PAGE</h1>
+
+    <table border=2 >
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Mobile Number</th>
+            <th>Email Address</th>
+            <th>Address</th>
+            <th>Circle</th>
+            <th>User</th>
+            <th colspan="2">ACTIONS</th>
+        </tr>
+        {% for i in contact_list %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.contact}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.category_id}}</td>
+            <td>{{i.user_id}}</td>
+            <td><a href="delete/{{i.id}}">DELETE</a></td>
+            <td><a href="update/{{i.id}}">EDIT</a></td>
+        </tr>
+        {% endfor %}
+    </table>
